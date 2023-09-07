@@ -41,6 +41,7 @@ LinkedList.prototype.add = function (value) {   // 7, 2
 // console.log(newList.add(5))    Node { value: 5, next: null }
 // console.log(newList)           LinkedList { head: Node { value: 7, next: Node: { value: 2, next: Node: { value: 5, next: null } } } } 
 
+// Cris tkm
 
 // remove:
 // elimina el último nodo de la lista y retorna su valor (tener en cuenta el caso particular de una lista de un solo nodo y de una lista vacía)
