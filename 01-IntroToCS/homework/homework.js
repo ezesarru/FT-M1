@@ -1,7 +1,7 @@
 'use strict';
 
 function BinarioADecimal(num) {
-   return 'hola'
+   return 'holaa'
 }
 
 function DecimalABinario(num) {}
