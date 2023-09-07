@@ -74,6 +74,10 @@ function mergeSort(array) {
       // Si el primer elemento (y único) de 'right' es menor o igual, se agrega a 'array'. 
       array.push(right.shift())
     }
+
+// left[0] < right[0] ? array.push(left.shift()) : array.push(right.shift())
+// se puede hacer con ternarios!!!
+
   }
   // Después de que uno de los subarrays se agote, agrega los elementos restantes del otro subarray a 'array'.
   array = array.concat(left, right)
