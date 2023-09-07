@@ -49,34 +49,36 @@ function mergeSort(array) {
   if (array.length <= 1) return array
 
   // Calcula el índice divisor, que divide el array en dos partes aproximadamente iguales.
-  let divisor = Math.floor(array.length / 2)
+  let mitad = Math.floor(array.length / 2)
 
   // Divide el array en dos subarrays: 'left' y 'right'.
-  let left = array.slice(0, divisor)
-  let right = array.slice(divisor)
+  let left = array.slice(0, mitad)
+  let right = array.slice(mitad)
 
-  // Inicializa un array vacío llamado 'result' donde se almacenarán los elementos ordenados.
-  let result = []
+  // Vaciamos el array, acá se almacenarán los elementos ordenados.
+  array = []
 
   // Llama recursivamente mergeSort en los subarrays 'left' y 'right' para dividirlos.
-  const leftArray = mergeSort(left)
-  const rightArray = mergeSort(right)
+  left = mergeSort(left)
+  right = mergeSort(right)
 
-  // Comienza a combinar los subarrays ordenados en el array 'result'.
-  while (leftArray.length && rightArray.length) {
+  // Comienza a combinar los subarrays ordenados en el array.
+  while (left.length && right.length) {
 
-    // Compara el primer elemento de 'leftArray' y 'rightArray'.
-    if (leftArray[0] < rightArray[0]) {
+    // Compara el primer (y único) elemento de 'left' y 'right'.
+    if (left[0] < right[0]) {
 
-      // Si el primer elemento de 'leftArray' es menor, lo agrega a 'result'.
-      result.push(leftArray.shift())
+      // Si el primer (y único) elemento de 'left' es menor, se agrega a 'array'. 
+      array.push(left.shift())
     } else {
-      // Si el primer elemento de 'rightArray' es menor o igual, lo agrega a 'result'.
-      result.push(rightArray.shift())
+      // Si el primer elemento (y único) de 'right' es menor o igual, se agrega a 'array'. 
+      array.push(right.shift())
     }
   }
-  // Después de que uno de los subarrays se agote, agrega los elementos restantes del otro subarray a 'result'.
-  return result.concat(leftArray, rightArray)
+  // Después de que uno de los subarrays se agote, agrega los elementos restantes del otro subarray a 'array'.
+  array = array.concat(left, right)
+
+  return array
 }
 
 
