@@ -1,37 +1,41 @@
 'use strict';
 
+// Separamos el número                    1   0   1   0   1
+// Si es 1 seguimos, si es 0 no                 
+// Hacemos 2 potenciado a la posición    2^4     2^2     2^0
+// Sumamos y obtenemos el resultado       16  +   4   +   1   =   21
 
 function BinarioADecimal(num) {    
-   var resultado = num.split('')  
-   resultado.reverse()
-   var cont = 0
+   let cont = 0
+   let array = num.toString().split('').reverse()
 
-   for (var i = 0; i < resultado.length; i++) {
-      if (resultado[i] == 1) {
-         cont += (2**i)
+   for(let i = 0; i < array.length; i++){
+      if(array[i] == 1){
+         cont += (2 ** i)
       }
    }
-   return cont
+  return cont
 }
 
 
+// constantemente dividimos el número en 2 hasta q el cociente sea 0
+// vamos pusheando los restos, desde el último hasta el primero
 
-function DecimalABinario(num) {
-   var resultado = []
-   var cont = num
-   while (cont > 0) {
-      if (cont %2 == 0) {
-         resultado.push(0) 
-      }
-      else {
-         resultado.push(1)
-      }
-      cont = Math.floor(cont /2)
+// almacenar (num % 2) 
+// num /= 2 hasta que el cociente sea 0
+
+function DecimalABinario(num) {  
+   let binario = []
+
+   while(num >= 1) { 
+     
+     binario.push(num % 2)
+    
+     num = Math.floor(num / 2) 
    }
-   resultado.reverse()
-   var final = resultado.join('')
-   return final
+   return binario.reverse().join('') 
 }
+
 
 
 module.exports = {

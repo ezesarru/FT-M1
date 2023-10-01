@@ -86,6 +86,26 @@ function mergeSort(array) {
 }
 
 
+// function encontrarMasCaros(tragos, precio) {
+//   if(tragos.length === 0) return 'No hay tragos disponibles'
+//   let index = 0
+//   let result = []
+
+//   for(let i = 0; i < tragos.length; i++) {
+//     if(tragos[i].nombre.precio >= precio) {
+//       result.push(tragos[i])
+//     }
+//   }
+//   return result
+// }
+
+
+
+
+
+
+
+
 
 
 // No modificar nada debajo de esta línea
