@@ -1,6 +1,6 @@
 'use strict';
 
-// Separamos el número       uwuus           1   0   1   0   1
+// Separamos el número       suwuus           1   0   1   0   1
 // Si es 1 seguimos, si es 0 no                 
 // Hacemos 2 potenciado a la posición    2^4     2^2     2^0
 // Sumamos y obtenemos el resultado       16  +   4   +   1   =   21
